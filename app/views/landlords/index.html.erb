@@ -1,0 +1,35 @@
+
+
+<h1 align = "center">Listing Landlords</h1>
+
+<table class = "table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align:center">Name</th>
+      <th style="text-align:center">Email</th>
+      <th style="text-align:center">Phone</th>
+    
+      <th style="text-align:center" colspan="3"><i>options</i></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @landlords.each do |landlord| %>
+      <tr>
+        <td><%= landlord.name %></td>
+        <td><%= landlord.email %></td>
+        <td><%= landlord.phone %></td>
+      
+       
+	   <td style="text-align:center"><%= link_to 'Show', landlord %></td>
+        <td style="text-align:center"><%= link_to 'Edit', edit_landlord_path(landlord) %></td>
+        <td style="text-align:center"><%= link_to 'Destroy', landlord, method: :delete, data:{ confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div align = "center">
+<%= link_to 'New Landlord', new_landlord_path %>
+</div>

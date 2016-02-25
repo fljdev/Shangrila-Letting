@@ -1,0 +1,35 @@
+
+<div align = "center">
+<p>
+  <strong>Name:</strong>
+  <%= @lodger.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lodger.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @lodger.phone %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @lodger.references %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @lodger.occupation %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @lodger.sex %>
+</p>
+
+<%= link_to 'Edit', edit_lodger_path(@lodger) %> |
+<%= link_to 'Back', root_path %>
+</div>

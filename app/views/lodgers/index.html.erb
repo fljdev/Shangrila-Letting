@@ -1,0 +1,35 @@
+<h1 align = "center">Listing Lodgers</h1>
+
+<table class = "table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align:center">Name</th>
+      <th style="text-align:center">Email</th>
+      <th style="text-align:center">Phone</th>
+      <th style="text-align:center">Occupation</th>
+      <th style="text-align:center">Sex</th>
+    
+      <th style="text-align:center" colspan="3"><i>options</i></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lodgers.each do |lodger| %>
+      <tr>
+        <td><%= lodger.name %></td>
+        <td><%= lodger.email %></td>
+        <td><%= lodger.phone %></td>
+        <td><%= lodger.occupation %></td>
+        <td><%= lodger.sex %></td>
+        <td><%= link_to 'Show', lodger %></td>
+        <td><%= link_to 'Edit', edit_lodger_path(lodger) %></td>
+        <td><%= link_to 'Destroy', lodger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div align = "center">
+<%= link_to 'New Lodger', new_lodger_path %>
+</div>

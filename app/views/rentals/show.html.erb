@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room address:</strong>
+  <%= @rental.room_address %>
+</p>
+
+<p>
+  <strong>Lodger name:</strong>
+  <%= @rental.lodger_name %>
+</p>
+
+<p>
+  <strong>Lease start:</strong>
+  <%= @rental.lease_start %>
+</p>
+
+<p>
+  <strong>Lease end:</strong>
+  <%= @rental.lease_end %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

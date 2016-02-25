@@ -1,0 +1,57 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :room_type %><br>
+    <%= f.select :room_type, [["Single"], ["Double"], ["King"]] %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_per_month %><br>
+    <%= f.text_field :rent_per_month %>
+  </div>
+  <div class="field">
+    <%= f.label :deposit %><br>
+    <%= f.text_field :deposit %>
+  </div>
+  <div class="field">
+    <%= f.label :available_from %><br>
+    <%= f.date_select :available_from %>
+  </div>
+  <div class="field">
+    <%= f.label :available_to %><br>
+    <%= f.date_select :available_to %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_area :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :Landlord %><br>
+    <%= f.collection_select :landlord_id,Landlord.all, :id, :name %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+
+<% end %>

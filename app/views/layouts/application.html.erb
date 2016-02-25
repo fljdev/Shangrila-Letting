@@ -1,0 +1,96 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta charset="UTF-8">
+<title>Lodgings App</title>
+<%= stylesheet_link_tag 'application',media: 'all', 'data-turbolinks-track'=>true%>
+<%= javascript_include_tag 'application','data-turbolinks-track'=>true%>
+<%=csrf_meta_tags%>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+	.bs-example{
+    	margin: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+       
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+	
+                
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+				
+					<%if !signed_in?%>
+							<li><%=link_to "Sign In",login_path %></li>
+						<%else%>
+							<li>Signed in as <%= @current_user.name %></li>
+							<li><%= link_to "Sign Out",logout_path %></li>
+						<%end%>
+						
+                    <li ><%= link_to "Home",root_path%> </li>
+                    <li> <%= link_to "Recent Lets",rentals_path%> </li>
+					
+					
+					
+					
+					
+		   <li> <%= link_to "Rooms available",rooms_path%> </li>
+		   <li> <%= link_to "View Landlords",landlords_path%> </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Register <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                           <li> <%= link_to "Signup as Landlord",new_landlord_path%> </li>
+                            <li> <%= link_to "Signup as Lodger",new_lodger_path%> </li>
+                            <li class="divider"></li>
+                           <li><%= link_to "Back Home",root_path%> </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Useful Sites <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                           <li> <%= link_to "Dublin Guide",'http://www.dublin.ie/', :target => "_blank" %> </li>
+                           <li> <%= link_to "Threshold",'http://www.threshold.ie/', :target => "_blank" %> </li>
+ 		           <li> <%= link_to "Order Food",'https://www.just-eat.ie/?opt=0a5674029', :target => "_blank" %> </li>
+			  
+                            <li class="divider"></li>
+                             <li> <%= link_to "Maps",'https://www.google.ie/maps/@53.3550067,-6.2500853,12z', :target => "_blank" %> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+</div>
+
+<% flash.each do|key,value|%>
+	<div class="flash <%= key%>">
+		<%= value%>
+	</div>
+<%end%>
+
+<%= yield %>
+</body>
+</html>                                		

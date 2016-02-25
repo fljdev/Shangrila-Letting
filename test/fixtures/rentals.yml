@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_address: MyString
+  lodger_name: MyString
+  lease_start: 2016-02-23
+  lease_end: 2016-02-23
+
+two:
+  room_address: MyString
+  lodger_name: MyString
+  lease_start: 2016-02-23
+  lease_end: 2016-02-23

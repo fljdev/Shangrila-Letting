@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ul
+{
+    list-style-type: none;
+    padding:0; 
+    margin:0;
+}
+
+
+#out{
+	background: #FAEBD7;
+}
+ #banner {
+  background: #8B7355;
+  padding: 10px;
+  border-bottom: 5px solid;
+  font: small-caps 50px/60px "Times New Roman", serif;
+  color: #ffff00;
+  text-align: center;
+
+  img {
+    float: left;
+  }
+}
+
+
+
+#columns {
+  background: #DEB887;
+font-size:big ;
+padding: 0 0.8em;
+  white-space: nowrap;
+ margin: 0;
+  padding: 0;
+color: #09c;
+  padding: 0 7px;
+  font-weight: bold;
+
+
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
+  }
+
+//#START:side
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: yellow;
+
+/* START_HIGHLIGHT */
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:     black;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+/* END_HIGHLIGHT */
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #bfb;
+          font-size: large;
+        }
+      }
+    }
+  }
+//#END:side
+} #end columns
+
+#nav {
+  float: right;
+	font-size:big ;
+}
+
+#nav {
+  background-color: #DEB887 ;
+  padding: 0 0.8em;
+  white-space: nowrap;
+}
+
+#nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+#nav ul li a {
+  padding: 0 7px;
+  font-weight: bold;
+}
+
+#nav ul li a:visited {
+  color: #09c;
+}
+
+#nav ul li a:hover {
+	color :#DEB887 ;
+ 
+  }

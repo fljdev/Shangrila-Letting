@@ -1,0 +1,53 @@
+
+
+
+<h1 align = "center">Listing Rooms</h1><%=will_paginate @rooms%></br>
+
+
+
+<table class="table table-bordered">
+  <thead>
+  
+    <tr>
+      <th>Room type</th>
+      <th>Address</th>
+      <th>Rent per month</th>
+      <th>Deposit</th>
+      <th>Available from</th>
+      <th>Available to</th>
+	  <th>Picture</th>
+      <th>Description</th>
+	  <th>Landlord</th>
+	  <th>Advertised</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.room_type %></td>
+        <td><%= room.address %></td>
+        <td><%= room.rent_per_month %></td>
+        <td><%= room.deposit %></td>
+        <td><%= room.available_from %></td>
+        <td><%= room.available_to %></td>
+		<td><%= image_tag(room.picture, :alt => "Bedroom" ,:size=>"120x100") %></td>
+        
+		
+		
+        <td><%= room.description %></td>
+		<td><%= room.landlord.name %> </td>
+		<td><%=time_ago_in_words(room.created_at) %> ago</td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Room', new_room_path %>
+

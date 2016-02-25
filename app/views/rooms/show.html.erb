@@ -1,0 +1,59 @@
+<div class="container">
+	<div class="jumbotron">
+
+
+
+<p>
+  <strong>Room type:</strong>
+  <%= @room.room_type %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @room.address %>
+</p>
+
+<p>
+  <strong>Rent per month:</strong>
+  <%= @room.rent_per_month %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @room.deposit %>
+</p>
+
+<p>
+  <strong>Available from:</strong>
+  <%= @room.available_from %>
+</p>
+
+<p>
+  <strong>Available to:</strong>
+  <%= @room.available_to %>
+</p>
+
+<p>
+	<strong>Picture</strong>
+    <%= image_tag(@room.picture, :alt => "Bedroom" ,:size=>"120x100") %>
+ </p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @room.description %>
+</p>
+
+<p>
+  <strong>Advertised:</strong>
+  <%=time_ago_in_words(@room.created_at) %> ago
+</p>
+
+<p>
+<%=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@room.latitude}%2C#{@room.longitude}"%>
+</p>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
+
+</div>
+</div>
